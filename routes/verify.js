@@ -15,7 +15,8 @@ router.all('/requestVerify', async function(req, res, next) {
     try {
         const pinNum = generateRandomCode(6);
         const guild = `${req.query.grade}학년 ${req.query.class}반`
-        const email = `2022${req.query.grade}${req.query.class}${req.query.number}@gudeok.hs.kr`
+        const email = `2022${req.query.grade}${req.query.class}${req.query.number.padStart(2, '0')}@gudeok.hs.kr`
+        console.log(email)
         let emailParam = {
             toEmail: email,     // 수신할 이메일
             subject: '구덕서버 메일 인증',   // 메일 제목
