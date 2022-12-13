@@ -7,10 +7,10 @@ const options = {
     timeout: 5000,
     enableSRV: true
 }
-const Server = 'hypixel.net'
+const Server = 'gdparty.kro.kr'
 const getServerInfo = async () => {
     try {
-        const response = await mcutil.status('hypixel.net', 25565,options)
+        const response = await mcutil.status('gdparty.kro.kr', 25565,options)
         return response
     } catch (error) {
         console.error(error)
