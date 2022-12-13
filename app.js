@@ -6,6 +6,7 @@ const cors = require('cors')
 
 var indexRouter = require('./routes/index');
 var verifyRouter = require('./routes/verify');
+var ServerEndTimeRouter = require('./routes/ServerEndTime');
 
 var app = express();
 app.use(cors())
@@ -16,5 +17,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', verifyRouter);
+app.use('/mcServer', ServerEndTimeRouter);
 
 module.exports = app;
